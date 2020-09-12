@@ -1,0 +1,14 @@
+{
+  "name": "perf-analytics-library",
+  "version": "1.0.0",
+  "description": "Performance Analytics Library",
+  "main": "perfanalytics.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cihan Imren",
+  "license": "ISC"
+}
