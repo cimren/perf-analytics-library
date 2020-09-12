@@ -1,7 +1,7 @@
 {
   "name": "perf-analytics-library",
   "version": "1.0.0",
-  "description": "Performance Analytics Library", 
+  "description": "Performance Analytics Library",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
