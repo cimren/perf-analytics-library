@@ -23,7 +23,7 @@ function PerfAnalytics() {
 
   this.postData = function(){
     var request = new XMLHttpRequest(),
-        url= "https://cihan-perf-analytics-api.herokuapp.com/perf_metrics",
+        url= "/api/perf_metrics";//"https://cihan-perf-analytics-api.herokuapp.com/perf_metrics",
         postData = {
           "url": window.location.href,
           "TTFB": this.getTTFB().toString(),
@@ -35,7 +35,7 @@ function PerfAnalytics() {
     
     request.open("POST", url, true);
     request.setRequestHeader('Content-type', 'application/json');    
-    request.send(postData);
+    request.send(JSON.stringify(postData));
     request.onload = function(){
       console.log(request);
       if(request.status === 200){

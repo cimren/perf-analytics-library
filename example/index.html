@@ -6,6 +6,7 @@
 	<title>Previewer</title>
 	<meta name="description" content="Perf Analaytics" />
 	<meta name="author" content="Cihan Imren" />
+	<script src="../dist/perfanalytics.js"></script>
 	
 	<style>
 	
@@ -14,15 +15,12 @@
 
 <body>
 
-
-
-	<script src="../perfanalytics.js"></script>
-
+	<p>Sending analytics data to the api. You can check dashboard <a href="">here.</a></p>
 
 	<script>
     var perfAnalytics = new PerfAnalytics();
     perfAnalytics.sendAnalytics();
-    //console.log("TTFB(ms):" + perfAnalytics.getTTFB());
+    
 	</script>
 </body>
 
