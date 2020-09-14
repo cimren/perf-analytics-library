@@ -23,14 +23,13 @@ function PerfAnalytics() {
 
   this.postData = function(){
     var request = new XMLHttpRequest(),
-        url= "/api/perf_metrics";//"https://cihan-perf-analytics-api.herokuapp.com/perf_metrics",
+        url= "/api/perf_metrics";
         postData = {
           "url": window.location.href,
           "TTFB": this.getTTFB().toString(),
-          "FCP": "44",
-          "domLoad": "98",
-          "windowLoad": "123",
-          "datetime": "1109201510"
+          "FCP": this.getFCP().toString(),
+          "domLoad": this.getDomLoad().toString(),
+          "windowLoad": this.getWindowLoad().toString(),
         };    
     
     request.open("POST", url, true);
@@ -59,6 +58,21 @@ PerfAnalytics.prototype.getResult = function (data) {
 PerfAnalytics.prototype.getTTFB = function () {
   var time = window.performance.timing;
   return time.responseStart - time.navigationStart;
+};
+
+PerfAnalytics.prototype.getFCP = function(){
+  var paintMetric = performance.getEntriesByName("first-contentful-paint");
+  return paintMetric.startTime;
+};
+
+PerfAnalytics.prototype.getDomLoad = function () {
+  var time = window.performance.timing;
+  return time.domComplete - time.domLoading;
+};
+
+PerfAnalytics.prototype.getWindowLoad = function () {
+  var time = window.performance.timing;
+  return time.loadEventEnd - time.loadEventStart;
 };
 
 PerfAnalytics.prototype.sendAnalytics = function () {

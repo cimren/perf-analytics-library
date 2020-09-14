@@ -81,53 +81,21 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "webpack");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./index.js":
-/*!******************!*\
-  !*** ./index.js ***!
-  \******************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var express = __webpack_require__(/*! express */ \"express\");\n\nvar request = __webpack_require__(/*! request */ \"request\");\n\nvar bodyParser = __webpack_require__(/*! body-parser */ \"body-parser\");\n\nvar PORT = process.env.PORT || 4000;\nvar app = express();\napp.use(bodyParser.json());\napp.use(bodyParser.urlencoded({\n  extended: true\n}));\napp.post('/api/perf_metrics', function (req, res) {\n  var url = \"https://cihan-perf-analytics-api.herokuapp.com/perf_metrics\";\n  console.log(req.body);\n  request.post({\n    headers: {\n      \"content-type\": 'application/json'\n    },\n    url: url,\n    body: req.body,\n    json: true\n  }, function (error, response, body) {\n    if (error) {\n      throw error;\n    } else if (!error && response.statusCode === 201) {\n      console.log(\"Data sent succesfully.\");\n    }\n  });\n});\napp.use(express[\"static\"]('./dist'));\napp.listen(PORT, function () {\n  console.log(\"Server is listening on port \".concat(PORT));\n});\n\n//# sourceURL=webpack:///./index.js?");
-
-/***/ }),
-
-/***/ "body-parser":
-/*!******************************!*\
-  !*** external "body-parser" ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = require(\"body-parser\");\n\n//# sourceURL=webpack:///external_%22body-parser%22?");
-
-/***/ }),
-
-/***/ "express":
+/***/ "webpack":
 /*!**************************!*\
-  !*** external "express" ***!
+  !*** external "webpack" ***!
   \**************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = require(\"express\");\n\n//# sourceURL=webpack:///external_%22express%22?");
-
-/***/ }),
-
-/***/ "request":
-/*!**************************!*\
-  !*** external "request" ***!
-  \**************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = require(\"request\");\n\n//# sourceURL=webpack:///external_%22request%22?");
+module.exports = require("webpack");
 
 /***/ })
 
 /******/ });
+//# sourceMappingURL=index.js.map

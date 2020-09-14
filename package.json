@@ -5,9 +5,10 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "node index.js",
-    "dev:build": "NODE_ENV=development webpack --config webpack.config.js --mode=development -w",
+    "dev:build": "NODE_ENV=development webpack --config webpack.server.js webpack --config webpack.client.js --mode=development -w",
     "dev:start": "nodemon ./dist/index.js",
     "dev": "npm-run-all --parallel dev:*",
+    "build": "NODE_ENV=production webpack --config webpack.server.js webpack --config webpack.client.js --mode=production -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Cihan Imren",
@@ -15,7 +16,8 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "uglify-js-plugin": "0.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",

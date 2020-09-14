@@ -26,7 +26,7 @@ app.post('/api/perf_metrics', (req, res) => {
   }) 
 })
 
-app.use(express.static('./dist'));
+app.use(express.static('./example'));
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
