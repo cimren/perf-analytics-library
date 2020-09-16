@@ -1,6 +1,6 @@
 /*!
  * perfanalytics.js v0.1.0
- * https://github.com/cimren
+ * https://github.com/cimren/perf-analytics-library
  *
  * Copyright (c) 2020 Cihan Imren
  */
@@ -47,14 +47,6 @@ function PerfAnalytics() {
 
 }
 
-PerfAnalytics.prototype.init = function () {
-  console.log("PerfAnalytics initialized");
-};
-
-PerfAnalytics.prototype.getResult = function (data) {
-  return "your data:" + data;
-};
-
 PerfAnalytics.prototype.getTTFB = function () {
   var time = window.performance.timing;
   return time.responseStart - time.navigationStart;
@@ -75,8 +67,7 @@ PerfAnalytics.prototype.getWindowLoad = function () {
   return time.loadEventEnd - time.loadEventStart;
 };
 
-PerfAnalytics.prototype.sendAnalytics = function () {
-  //this.getData();
+PerfAnalytics.prototype.sendAnalytics = function () {  
   this.postData();
 };
 
