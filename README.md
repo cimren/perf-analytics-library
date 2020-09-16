@@ -4,6 +4,8 @@ The library can be used in any project by including perfanalytics.min.js file un
 
 An example website using the library can be found under example folder.
 
+Demo: https://cihan-perf-analytics-library.herokuapp.com/
+
 ## Available Scripts
 In the project directory, you can run:
 
