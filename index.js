@@ -8,8 +8,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
 app.post('/api/perf_metrics', (req, res) => {
-  let url = "https://cihan-perf-analytics-api.herokuapp.com/perf_metrics"; 
-  console.log(req.body);
+  let url = "https://cihan-perf-analytics-api.herokuapp.com/perf_metrics";   
   
   request.post({
     headers: {"content-type" : 'application/json'},
